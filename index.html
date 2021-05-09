@@ -121,7 +121,18 @@
     <!-- search bar -->
     <div class="form-search">
     
-        <input type="search"  placeholder="Search for a keyword..." id="txtTest" class="search-item">
+        <input type="search"  placeholder="Search for a keyword..." id="search" class="search-item" list="autoComplete">
+       
+        <datalist id="autoComplete">
+
+            <option value="Backend dev"></option>
+            
+            <option value="Certificates"></option>
+            <option value="Contacts"></option>
+               <option value="Education"></option>
+            <option value="Frontend dev"></option>
+              <option value="Work Experience"></option>
+        </datalist>
     
     
     </div>
@@ -143,7 +154,7 @@
 
     <div class="containerItems">
     <!--The services I provide-->
-    <section class="myServices item" data-search="html css frontend backend flutter android iOS firebase programming javaScript angular bootstrap xml androidstudio c# csharp framework library asp.net sql web mobile database service technology technologies"  id="services">
+    <section class="myServices item" data-search="html css frontenddev backenddev flutter android iOS firebase programming javaScript angular bootstrap xml androidstudio c# csharp framework library asp.net sql web mobile database service technology technologies"  id="services">
         <h2 class="title titleSectionServices"> Technical Expertise</h2>
         <div class="services">
         <div class="service">
@@ -206,7 +217,10 @@
                 <p>SAQA ID 48872 – National Certificate: Information Technology (Systems Development) NQF Level 5
                 2020-2021</p>   
                 
-                <a id="hackerLink" href="https://www.hackerrank.com/certificates/318ab7e245bd" >HackerRank Certificate for Problem Solving (Basic)</a>
+                <a id="hackerLink" href="https://www.hackerrank.com/certificates/318ab7e245bd" >HackerRank Certificate for Problem Solving (Basic)</a> <br><br>
+                 <a id="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/responsive-web-design" >FreeCodeCamp Responsive Web Design Certificate</a>
+                 <br><br>
+                 <a id="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/javascript-algorithms-and-data-structures" >FreeCodeCamp JavaScript Algorithms and Data Structures Certificate</a>
 </p>   
              </div>
 
@@ -234,7 +248,7 @@
 </section>
 
 <!--Work Experience-->
-<section class="myWork item" data-search="html flutter android iOS firebase programming javascript css angular bootstrap frontend backend csharp database framework library c# asp.net mvc project sql web mobile agile company experience technology technologies work testdrivendevelopment oop xml obejectorientedprogramming androidstudio" id="work">
+<section class="myWork item" data-search="html flutter android iOS firebase programming javascript css angular bootstrap frontenddev backenddev csharp database framework library c# asp.net mvc project sql web mobile agile company workexperience technology technologies testdrivendevelopment oop xml obejectorientedprogramming androidstudio" id="work">
     <h2 class="title titleSectionExperience"> Work Experience </h2>
     <p class="subtitleSectionExperience">Development Methods & Tools <br> Agile Development Methodologies | Test Driven Development (TDD) | Object-Oriented Design & Development.
 </p>
@@ -285,7 +299,7 @@
 
 </section>
 
-<footer class="item" id="contact" data-search="number contact email socialmedia linkedin github" >
+<footer class="item" id="contact" data-search="number contacts email socialmedia linkedin github" >
   
     <a href="mailto:lwandilentshobane@gmail.com" class="socialListLink">lwandilentshobane@gmail.com</a> <br>
     <a href="tel:0795469176" class="socialListLink"> 
@@ -321,7 +335,7 @@
 <script src="javascript/app.js"></script>
 <script> // Get a reference to the input and wire it up to an input event handler that
     // calls the fixer function
-    document.getElementById("txtTest").addEventListener("input", forceLower);
+    document.getElementById("search").addEventListener("input", forceLower);
 
     // Event handling functions are automatically passed a reference to the
     // event that triggered them as the first argument (evt)
