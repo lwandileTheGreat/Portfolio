@@ -40,11 +40,14 @@
         // KasiCab image slide
         kasiCabImages[1] = "img/kasiCab.png";
         kasiCabImages[0] = "img/kasiCab2.png";
+          kasiCabImages[2] = "img/kasiCab1.png";
+        kasiCabImages[3] = "img/kasiCab3.png";
+          kasiCabImages[4] = "img/kasiCab4.png";
         // BASF Quality image slide
         basfImages[0] = "img/BASF _ Log in - Google Chrome 4_10_2021 7_22_12 AM.png";
         basfImages[1] = "img/BASF _ Log in - Google Chrome 4_10_2021 7_22_21 AM.png";
         basfImages[2] = "img/BASF _ Log in - Google Chrome 4_10_2021 7_22_30 AM.png";
-        // BASF Quality image slide
+        // AMS Quality image slide
         amsImages[0] = "img/Capaciti Ams.png";
         amsImages[1] = "img/Capaciti Ams2.png";
         amsImages[2] = "img/Capaciti Ams3 .png";
@@ -70,9 +73,9 @@
         }
         function startTimer() {
             setInterval(displayNextIntroImage, 5000);
-            setInterval(displayNextAmsImage, 10000);
-            setInterval(displayNextBasfImage, 11400);
-            setInterval(displayNextKasiCabImage, 12400);
+            setInterval(displayNextAmsImage, 7000);
+            setInterval(displayNextBasfImage, 7000);
+            setInterval(displayNextKasiCabImage, 7000);
         }
 
 
@@ -124,9 +127,7 @@
         <input type="search"  placeholder="Search for a keyword..." id="search" class="search-item" list="autoComplete">
        
         <datalist id="autoComplete">
-
             <option value="Backend dev"></option>
-            
             <option value="Certificates"></option>
             <option value="Contacts"></option>
                <option value="Education"></option>
@@ -244,7 +245,8 @@
         </ul></div>
         </div>
     </div>
-    <img src="img/Lwandile_2.jpg" alt="Lwandile looking at the sky" class="aboutImg">
+  <img src="img/Lwandile_2.jpg" alt="Lwandile looking at the sky" class="swing aboutImg ">
+
 </section>
 
 <!--Work Experience-->
@@ -265,9 +267,10 @@
         amazing user interface, Java to implement the backend functionality of the application and use SQLite as a
         database for the system.
 </p>
-        <a href="#" class="experienceItem">
+        <a href="https://github.com/lwandileTheGreat/CapaCITI-AMS" class="experienceItem">
             <img src="img/Capaciti Ams.png" alt="Image of Capaciti Attendance Management System application" id="amsSlide"
-                class="experienceImg"> 
+                class="experienceImg swing"> 
+                
         </a> 
         <p class="subtitleSectionExperience">Codeflux(Remote, hosted by CapaCITI) <br>
             Internship <br>
@@ -275,9 +278,9 @@
         
         <p class="textSectionExperience"> As a junior amongst Senior developers, we changed the controls in the BASF Quality web application. The task was to remove Kendo grids and implement HTML datatables. It was done using ASP.NET MVC C#. I also got a chance to learn how to use Twitter Bootstrap 3, jQuery and Razor (View), I also got to work with queries on Microsoft SQL Server database (Model) and C# to create a backend for the application and handle the business logic (Controller).
         </p>
-        <a href="#" class="experienceItem">
+        <a href="https://www.basf.com/za/en/who-we-are/Companies-and-Locations/BASF-SA.html" class="experienceItem">
             <img src="img/BASF _ Log in - Google Chrome 4_10_2021 7_22_12 AM.png" alt="Image of BASF Quality website login page" 
-               id="basfSlide" class="experienceImg">
+               id="basfSlide" class="experienceImg swing">
                
         </a>
 
@@ -289,7 +292,7 @@
         </p>
 <a href="#" class="experienceItem">
     <img src="img/kasiCab2.png" alt="Image of kasi Cab mobile application's" 
-        id="kasicabSlide" class="experienceImg">
+        id="kasicabSlide" class="experienceImg swing">
 
        
 </a>
@@ -324,11 +327,15 @@
 <script src="javascript/slideshow.js"></script>
 
 <script type="text/javascript">
+
     $('.search-item').search(function () {
 
         //execute after done typing.
 
-    });
+    }, 3000);
+
+    
+
 </script>
 <script src="javascript/particles.js"></script>
 <script src="javascript/particles.min.js"></script>
