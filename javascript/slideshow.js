@@ -2,68 +2,29 @@ const navOpener = document.querySelector(".nav-opener");
 
 const navLinks = document.querySelectorAll(".navLink");
 
+function setNavOpen(open) {
+  document.body.classList.toggle("navOpen", open);
+  navOpener.setAttribute("aria-expanded", String(open));
+  navOpener.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  if (open && window.startParticles) window.startParticles();
+}
+
 navOpener.addEventListener("click", () => {
-  document.body.classList.toggle("navOpen");
+  setNavOpen(!document.body.classList.contains("navOpen"));
 });
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    document.body.classList.remove("navOpen");
-  });
+  link.addEventListener("click", () => setNavOpen(false));
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && document.body.classList.contains("navOpen")) {
+    setNavOpen(false);
+    navOpener.focus();
+  }
 });
 
 //date
-document.getElementById("year").innerHTML = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-//Autocomplete on the search bar
-
-// const listOfKeywords = [
-//   "html",
-//   "css",
-//   "frontend",
-//   "backend",
-//   "flutter",
-//   "android",
-//   "iOS",
-//   "firebase",
-//   "programming",
-//   "javaScript",
-//   "angular",
-//   "bootstrap",
-//   "xml",
-//   "androidstudio",
-//   "csharp",
-//   "framework",
-//   "library",
-//   "asp.net",
-//   "sql",
-//   "web",
-//   "mobile",
-//   "database",
-//   "service",
-//   "technologies",
-//   "education",
-//   "school",
-//   "university",
-//   "college",
-//   "address",
-//   "certificates",
-//   "qualification",
-//   "skills",
-//   "interests",
-//   "hobbies",
-//   "number",
-//   "contact",
-//   "email",
-//   "socialmedia",
-//   "linkedin",
-//   "github",
-//   "work",
-//   "testdrivendevelopment",
-//   "oop",
-//   "xml",
-//   "obejectorientedprogramming",
-//   "androidstudio",
-// ];
-
-// document.getElementById("search").addEventListener('input', (e) => {});
+$(".search-item").search(function () {}, 3000);

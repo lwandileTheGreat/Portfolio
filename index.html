@@ -4,365 +4,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Lwandile Ntshobane, full-stack developer in Cape Town. Senior Associate at Morae and founder of CrimeS!gnal.">
 
     <title>Lwandile Ntshobane's Portfolio</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="javascript/jquery-3.1.0.min.js"></script>
-    <script src="javascript/e-search.min.js"></script>
+    <link rel="icon" href="img/favicon.png" type="image/png">
 
-    <link rel="shortcut icon" href="img/itechYe2.png" type="image/x-icon">
-
-    <!--
-        This is used to render css files the correct way across browsers and have the same result
-    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/style.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,800|Roboto+Slab:400,800&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-        var introImages = ["img/Lwandile2.jpg", "img/Lwandile.png"],
-            amsImages = [
-                "img/Capaciti Ams.png",
-                "img/Capaciti Ams2.png",
-                "img/Capaciti Ams3 .png",
-                "img/Capaciti Ams4.png",
-                "img/Capaciti Ams5.png"
-            ],
-            youngImages = [
-                "img/mercedes-benz payment - google chrome 6_1_2021 8_16_37 am.png",
-                "img/mercedes-benz payment - google chrome 6_1_2021 8_16_54 am.png",
-                "img/mercedes-benz payment - google chrome 6_1_2021 8_17_50 am.png",
-                "img/untitled - google chrome 6_1_2021 8_18_16 am.png",
-                "img/itechye2 - login - google chrome 5_23_2021 9_17_44 pm.png"
-            ],
-            x = 0,
-            y = 0,
-            z = 0;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet">
 
-        function displayNextIntroImage() {
-            x = (x + 1) % introImages.length;
-            document.getElementById("slideIntroImg").src = introImages[x];
-        }
-
-        function displayNextAmsImage() {
-            z = (z + 1) % amsImages.length;
-            document.getElementById("amsSlide").src = amsImages[z];
-        }
-
-        function displayNextYoungImage() {
-            y = (y + 1) % youngImages.length;
-            document.getElementById("youngSlide").src = youngImages[y];
-        }
-
-        function startTimer() {
-            setInterval(displayNextIntroImage, 5000);
-            setInterval(displayNextAmsImage, 7000);
-            setInterval(displayNextYoungImage, 7000);
-        }
-    </script>
+    <script src="javascript/jquery-3.1.0.min.js" defer></script>
+    <script src="javascript/e-search.min.js" defer></script>
+    <script src="javascript/particles.min.js" defer></script>
+    <script src="javascript/app.js" defer></script>
+    <script src="javascript/slideshow.js" defer></script>
+    <script src="javascript/gallery.js" defer></script>
 </head>
 
-<body onload="startTimer()">
-    <header>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <button class="nav-opener" aria-label="toggle navigation">
+    <header>
+        <button class="nav-opener" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
             <span class="hamburgerBtn"></span>
         </button>
 
-        <nav class="nav">
+        <nav class="nav" id="site-nav" aria-label="Main">
             <div id="particles-js">
                 <ul class="navList">
-                    <li class="navItems">
-                        <a href="#" class="navLink">Home</a>
-                    </li>
-                    <li class="navItems">
-                        <a href="#services" class="navLink">Services</a>
-                    </li>
-                    <li class="navItems">
-                        <a href="#about" class="navLink">About</a>
-                    </li>
-                    <li class="navItems">
-                        <a href="#work" class="navLink">Experience</a>
-                    </li>
-                    <li class="navItems">
-                        <a href="#contact" class="navLink">Contact</a>
-                    </li>
+                    <li><a href="#home" class="navLink">Home</a></li>
+                    <li><a href="#services" class="navLink">Services</a></li>
+                    <li><a href="#about" class="navLink">About</a></li>
+                    <li><a href="#work" class="navLink">Experience</a></li>
+                    <li><a href="#contact" class="navLink">Contact</a></li>
                 </ul>
             </div>
         </nav>
-
     </header>
 
-    <!--Welcome message-->
-    <h1 id="welcomeMsg"> Welcome To My Portfolio</h1>
+    <main id="main">
+        <p class="welcome">Welcome to my portfolio</p>
 
-    <!-- search bar -->
-    <div class="form-search">
+        <div class="form-search" role="search">
+            <label for="search" class="visually-hidden">Search this page by keyword</label>
+            <input type="search" placeholder="Search for a keyword (press Enter)" id="search" class="search-item" list="autoComplete">
 
-        <input type="search" placeholder="Search for a keyword...(Press Enter to Search)" id="search" class="search-item" list="autoComplete">
+            <datalist id="autoComplete">
+                <option value="AI"></option>
+                <option value="Azure"></option>
+                <option value="Backend dev"></option>
+                <option value="Certificates"></option>
+                <option value="Contacts"></option>
+                <option value="Dotnet"></option>
+                <option value="Education"></option>
+                <option value="Frontend dev"></option>
+                <option value="Work Experience"></option>
+            </datalist>
+        </div>
 
-        <datalist id="autoComplete">
-            <option value="Backend dev"></option>
-            <option value="Certificates"></option>
-            <option value="Contacts"></option>
-            <option value="Education"></option>
-            <option value="Frontend dev"></option>
-            <option value="Azure"></option>
-            <option value="Dotnet"></option>
-            <option value="Work Experience"></option>
-        </datalist>
-
-    </div>
-
-    <section class="intro" id="home">
-
-        <h1 class="title titleSectionIntro">
-            <strong> Lwandile Ntshobane</strong>
-        </h1>
-        <p class="subtitle subtitleSectionIntro"> Full-Stack Developer | Senior Associate at Morae | Founder of CrimeS!gnal</p>
-
-        <img src="img/Lwandile2.jpg" alt="lwandile Ntshobane's image" id="slideIntroImg" class="introImg">
-
-    </section>
-
-    <div class="containerItems">
-        <!--The services I provide-->
-        <section class="myServices item" data-search="html css frontenddev backenddev flutter kotlin reactnative expo android ios firebase programming javascript typescript react blazor knockout angular bootstrap xml androidstudio c# csharp dotnet .net framework library asp.net mvc webforms api rest restful oauth keycloak microservices azure devops docker sql web mobile database service technology technologies"
-            id="services">
-            <h2 class="title titleSectionServices"> Technical Expertise</h2>
-            <div class="services">
-                <div class="service">
-                    <h3 class="subtitleServices"> Web development </h3>
-                    <p class="subtitle">Technologies I can use: </p>
-
-                    <p> HTML5 / JavaScript / TypeScript / CSS3 (This is the part that makes the site look pretty). This includes React, Blazor, Knockout.js, Angular, GraphQL, Bootstrap, Razor and jQuery to create interactive, responsive and user-friendly web applications. </p>
-
-                    <p> Microsoft .NET and C# with ASP.NET Core, MVC and Web Forms (This is the part that links the database to the front end of the website). I design and build secure RESTful APIs, set up sign-in with OAuth 2.0 and Keycloak, and move older monolithic systems to microservices. </p>
-
-                    <p> Microsoft SQL Server using Entity Framework (This is the database that stores information for our websites). I also use PostgreSQL and Firebase as the backend of web applications.
-                    </p>
-
-                </div>
+        <section class="intro" id="home">
+            <div>
+                <h1 class="title titleSectionIntro">Lwandile Ntshobane</h1>
+                <p class="subtitle subtitleSectionIntro">Full-Stack Developer | Senior Associate at Morae | Founder of CrimeS!gnal</p>
             </div>
-
-            <div class="services">
-                <div class="service">
-                    <h3 class="subtitleServices"> Mobile Development </h3>
-                    <p class="subtitle">Technologies I can use: </p>
-                    <p> Flutter (This is used to create cross platform applications for Android, iOS, Web and desktop). Using the Dart programming language to implement logic.</p>
-
-                    <p> React Native with Expo (This is used to build one app for both Android and iOS in TypeScript).</p>
-
-                    <p> Kotlin, Java and Android Studio (This is mainly used to create Android platform specific applications). I can use XML to create user interfaces and SQL databases to store the information an application uses. </p>
-
-                    <p> I can use Firebase for the backend of mobile applications, for data storage, third party authentication and more.
-                    </p>
-                </div>
-            </div>
-
-            <div class="services">
-                <div class="service">
-                    <h3 class="subtitleServices"> Cloud &amp; DevOps </h3>
-                    <p class="subtitle">Technologies I can use: </p>
-                    <p> Microsoft Azure (App Services, Storage and Application Insights for monitoring) and AWS (Lambda functions and DynamoDB).</p>
-
-                    <p> CI/CD pipelines in Azure DevOps and GitHub Actions for automated builds and deployments, and Docker to keep every environment the same.</p>
-
-                    <p> Unit and integration testing, working in Agile/Scrum teams.
-                    </p>
-                </div>
-            </div>
-
+            <figure class="slideshow" data-interval="5000" style="margin:0">
+                <img src="img/lwandile-1.webp" width="519" height="370" alt="Lwandile Ntshobane" class="introImg" data-slides="img/lwandile-1.webp|Lwandile Ntshobane;img/lwandile-2.webp|Lwandile Ntshobane">
+            </figure>
         </section>
 
-        <!--About-->
-        <section class="myAbout item" data-search="education school university college address certificates qualification skills interests hobbies azure" id="about">
-
-            <h2 class="title titleSectionAbout">My Background <a href="#work" class="btn">*Work Experience* </a></h2>
-            <p class="subtitle subtitleSectionAbout"> Developer From Cape Town </p>
-
-            <div class="aboutBody">
-                <p>I'm a full-stack developer with over five years of experience designing, building and scaling web and mobile applications. I hold a Bachelor of Science from the University of the Witwatersrand and a National Certificate in Information Technology (Systems Development).</p>
-                <p>My core expertise is full-stack web development, custom software and database design, and cross-platform mobile development for iOS and Android. I enjoy taking a digital product from the first idea all the way to deployment.
-                </p>
-                <p>I work well in collaborative, cross-functional teams where clear communication and a focus on quality lead to good outcomes. I am willing to listen, read and learn new things, I am good at meeting deadlines, and I believe that curiosity and consistent effort are the foundation of lasting work.</p>
-
-                <div class="skillsContainer">
-                    <div class="aboutItem">
-                        <h3>Education</h3>
-
-                        <p>Hillbrow Senior Secondary School 2016 (Matric)
-                        </p>
-                        <p>University of The Witwatersrand Bachelor of Science 2017-2019
-                        </p>
-                        <p>SAQA ID 48872, National Certificate: Information Technology (Systems Development) NQF Level 5 2020-2021
-                        </p>
-
-                        <p>Microsoft Certified: Azure Fundamentals</p>
-
-                        <a class="hackerLink" href="https://www.hackerrank.com/certificates/318ab7e245bd">HackerRank Certificate for Problem Solving (Basic)</a> <br><br>
-                        <a class="hackerLink" href="https://adscerts.com/scholar/650BE36E3D8DC7AE">Google Developer Certification for Android Development</a><br><br>
-                        <a class="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/responsive-web-design">FreeCodeCamp Responsive Web Design Certificate</a>
-                        <br><br>
-                        <a class="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/javascript-algorithms-and-data-structures">FreeCodeCamp JavaScript Algorithms and Data Structures Certificate</a> <br><br>
-                        <a class="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/front-end-development-libraries">Front End Libraries Certificate</a>
+        <div class="containerItems">
+            <!--The services I provide-->
+            <section class="myServices item" data-search="html css frontenddev backenddev flutter kotlin reactnative expo android ios firebase programming javascript typescript react blazor knockout angular bootstrap xml androidstudio c# csharp dotnet .net framework library asp.net mvc webforms api rest restful oauth keycloak microservices azure devops docker sql web mobile database service technology technologies ai artificialintelligence claude claudecode copilot githubcopilot chatgpt deepseek llm prompt"
+                id="services" aria-labelledby="services-title">
+                <h2 class="title titleSectionServices" id="services-title">Technical Expertise</h2>
+                <div class="services">
+                    <div class="service">
+                        <h3 class="subtitleServices">Web development</h3>
+                        <p>HTML5, JavaScript, TypeScript and CSS3 for the part people see, with React, Blazor, Knockout.js, Angular, GraphQL, Bootstrap, Razor and jQuery for interactive, responsive web applications.</p>
+                        <p>Microsoft .NET and C# with ASP.NET Core, MVC and Web Forms for the part that links the database to the website. I design and build secure RESTful APIs, set up sign-in with OAuth 2.0 and Keycloak, and move older monolithic systems to microservices.</p>
+                        <p>Microsoft SQL Server with Entity Framework, PostgreSQL and Firebase for storing data.</p>
                     </div>
 
-                    <div class="aboutItem">
-                        <h3>Key Skills</h3>
+                    <div class="service">
+                        <h3 class="subtitleServices">Mobile development</h3>
+                        <p>React Native with Expo, to build one app for both Android and iOS in TypeScript.</p>
+                        <p>Flutter and Dart for cross-platform apps on Android, iOS, web and desktop.</p>
+                        <p>Kotlin, Java and Android Studio for Android apps, with Firebase for data storage, third party sign-in and more.</p>
+                    </div>
+
+                    <div class="service">
+                        <h3 class="subtitleServices">Cloud and DevOps</h3>
+                        <p>Microsoft Azure (App Services, Storage and Application Insights for monitoring) and AWS (Lambda functions, DynamoDB, SQS and PostgreSQL).</p>
+                        <p>CI/CD pipelines in Azure DevOps and GitHub Actions for automated builds and deployments, and Docker to keep every environment the same.</p>
+                        <p>Unit and integration testing, working in Agile/Scrum teams.</p>
+                    </div>
+
+                    <div class="service">
+                        <h3 class="subtitleServices">AI-assisted development</h3>
+                        <p>Claude and Claude Code, including subagents, for planning features, writing and refactoring code, code reviews, tests and documentation across whole projects.</p>
+                        <p>GitHub Copilot in the editor for day-to-day coding, and ChatGPT and DeepSeek for research, debugging and comparing approaches.</p>
+                        <p>I always review, test and take responsibility for what AI tools produce before it ships.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--About-->
+            <section class="myAbout item" data-search="education school university college address certificates qualification skills interests hobbies azure ai artificialintelligence" id="about" aria-labelledby="about-title">
+                <div>
+                    <h2 class="title titleSectionAbout" id="about-title">My Background</h2>
+                    <p class="subtitle subtitleSectionAbout">Developer from Cape Town</p>
+
+                    <p>I'm a full-stack developer with over five years of experience designing, building and scaling web and mobile applications. I hold a Bachelor of Science from the University of the Witwatersrand and a National Certificate in Information Technology (Systems Development).</p>
+                    <p>My core expertise is full-stack web development, custom software and database design, and cross-platform mobile development for iOS and Android. I enjoy taking a digital product from the first idea all the way to deployment.</p>
+                    <p>I work well in collaborative, cross-functional teams where clear communication and a focus on quality lead to good outcomes. I am willing to listen, read and learn new things, I am good at meeting deadlines, and I believe that curiosity and consistent effort are the foundation of lasting work. <a href="#work">See my work experience</a>.</p>
+
+                    <div class="skillsContainer">
+                        <div class="aboutItem">
+                            <h3>Education</h3>
+                            <p>Hillbrow Senior Secondary School, 2016 (Matric)</p>
+                            <p>University of the Witwatersrand, Bachelor of Science, 2017-2019</p>
+                            <p>SAQA ID 48872, National Certificate: Information Technology (Systems Development) NQF Level 5, 2020-2021</p>
+
+                            <h3 style="margin-top:1em">Certificates</h3>
+                            <ul class="certList">
+                                <li>Microsoft Certified: Azure Fundamentals</li>
+                                <li><a href="https://www.hackerrank.com/certificates/318ab7e245bd">HackerRank Problem Solving (Basic)</a></li>
+                                <li><a href="https://adscerts.com/scholar/650BE36E3D8DC7AE">Google Developer Certification for Android Development</a></li>
+                                <li><a href="https://www.freecodecamp.org/certification/lwandile/responsive-web-design">freeCodeCamp Responsive Web Design</a></li>
+                                <li><a href="https://www.freecodecamp.org/certification/lwandile/javascript-algorithms-and-data-structures">freeCodeCamp JavaScript Algorithms and Data Structures</a></li>
+                                <li><a href="https://www.freecodecamp.org/certification/lwandile/front-end-development-libraries">freeCodeCamp Front End Development Libraries</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="aboutItem">
+                            <h3>Key Skills</h3>
+                            <ul>
+                                <li>.NET and API Design</li>
+                                <li>Legacy Modernisation</li>
+                                <li>AI-Assisted Development</li>
+                                <li>Time Management</li>
+                                <li>Detail-Oriented and Results Driven</li>
+                                <li>Project Planning</li>
+                                <li>Teamwork and Mentoring</li>
+                                <li>Critical Thinking</li>
+                            </ul>
+                        </div>
+
+                        <div class="aboutItem">
+                            <h3>Interests and Hobbies</h3>
+                            <ul>
+                                <li>Artificial Intelligence</li>
+                                <li>Charity</li>
+                                <li>Chess</li>
+                                <li>Digital Marketing</li>
+                                <li>Reading and Writing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <img src="img/lwandile-about.webp" width="480" height="710" loading="lazy" alt="Lwandile Ntshobane looking up at the sky" class="aboutImg">
+            </section>
+
+            <!--Work Experience-->
+            <section class="myWork item" data-search="html flutter kotlin reactnative expo android ios firebase programming javascript typescript react blazor knockout css angular bootstrap frontenddev backenddev csharp dotnet .net database framework library c# asp.net mvc webforms api rest restful oauth keycloak microservices azure devops docker aws lambda nodejs express postgresql project sql web mobile agile scrum company workexperience technology technologies testdrivendevelopment oop xml obejectorientedprogramming androidstudio crimesignal morae nml younglings alyx capaciti citi founder ai claude claudecode copilot chatgpt deepseek"
+                id="work" aria-labelledby="work-title">
+                <h2 class="title titleSectionExperience" id="work-title">Work Experience</h2>
+                <p class="subtitleSectionExperience">Agile/Scrum | Test Driven Development (TDD) | Object-Oriented Design | CI/CD | Microservices | AI-Assisted Development</p>
+
+                <div class="experience">
+
+                    <article class="job">
+                        <h3>CrimeS!gnal, Founder</h3>
+                        <p class="jobMeta">September 2026 - present</p>
+                        <p>CrimeS!gnal is a South African safety alerts and incident management app for people, communities and organisations. It is trying to help fight South Africa's high crime rate by getting citizens involved in the fight. With one tap, someone in danger can reach the people they trust and the community around them. Security companies, estates, schools and businesses can manage incidents with it too.</p>
                         <ul>
-                            <li>.NET and API Design</li>
-                            <li>Legacy Modernisation</li>
-                            <li>Time Management</li>
-                            <li>Detail-Oriented and Results Driven</li>
-                            <li>Project Planning</li>
-                            <li>Teamwork and Mentoring</li>
-                            <li>Critical thinking </li>
+                            <li>Ownership: I own the company (registered in October 2026) and build the app with help from former associates from the Younglings tech programme hackathons. The idea grew from a 2020 hackathon project, and the app has been live at <a href="https://www.crimesignal.co.za">www.crimesignal.co.za</a> since 26 September 2026.</li>
+                            <li>Web and mobile: I designed and built the web app in TypeScript and React, and the Android and iOS app in React Native with Expo, kept light on data for people on prepaid bundles and older phones.</li>
+                            <li>Backend and cloud: I built the Node.js and Express backend with a PostgreSQL database on AWS, including push alerts, a loud alarm for emergencies, and queued delivery so alerts still go out under load.</li>
+                            <li>Data and quality: The crime map uses official SAPS crime figures that update themselves every week. Every change goes through type checks, linting, automated tests and a manual regression walk before release.</li>
+                            <li>AI-assisted development: I use Claude Code, with subagents for reviews, alongside my own testing to plan, build and document the product faster as a one-person company.</li>
                         </ul>
-                    </div>
-                    <div class="aboutItem">
-                        <h3>Interests &amp; Hobbies</h3>
+                    </article>
+
+                    <article class="job">
+                        <h3>Morae, Senior Associate</h3>
+                        <p class="jobMeta">June 2026 - present</p>
+                        <p>Software engineer with a strong focus on .NET development and API design.</p>
                         <ul>
-                            <li>Artificial Intelligence</li>
-                            <li>Charity</li>
-                            <li>Chess</li>
-                            <li>Digital Marketing</li>
-                            <li>Reading and Writing</li>
+                            <li>I build robust, scalable back-end solutions and well-structured RESTful APIs that drive integrations and business value.</li>
+                            <li>I maintain and modernise legacy .NET systems, leading migrations from monolithic applications to a microservices architecture to improve scalability, resilience and maintainability.</li>
                         </ul>
-                    </div>
+                    </article>
+
+                    <article class="job">
+                        <h3>NML, Developer</h3>
+                        <p class="jobMeta">March 2022 - May 2026</p>
+                        <p>As a full-stack developer I built and maintained web applications, modernising legacy systems and adding new, scalable solutions across the whole stack.</p>
+                        <ul>
+                            <li>Core development and modernisation: I moved legacy platforms from ASP.NET Web Forms to modern frameworks like MVC and Blazor, refactoring complex business logic so it could be tested. I contributed to the move from a monolith to microservices, which improved scalability and made deployments safer.</li>
+                            <li>Front end and user experience: I built dynamic, responsive interfaces using React, Knockout.js and Blazor that work well on every device.</li>
+                            <li>Security and API integration: I implemented OAuth 2.0 with Keycloak for authentication and role-based access control (RBAC), and built and consumed secure RESTful APIs between the front-end applications and the backend services.</li>
+                            <li>DevOps and collaboration: Working in Agile/Scrum teams, I helped set up CI/CD pipelines in Azure DevOps for automated builds and deployments. I kept up unit and integration tests and used Docker to keep environments consistent.</li>
+                            <li>Cloud and monitoring: I managed and optimised Azure resources (App Services, Storage) and used Application Insights for performance monitoring and production diagnostics.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <h3>Younglings Africa, Software Developer and Mentor</h3>
+                        <p class="jobMeta">April 2021 - March 2022</p>
+                        <p>Younglings Voluntary Association is a non-profit organisation that creates an environment for young people who want to become software developers and are passionate about the craft.</p>
+                        <ul>
+                            <li>E-learning app: I designed and built a cross-platform e-learning mobile app in Flutter and Dart, with AI-powered voice recognition to help early learners with reading and comprehension. It placed 3rd in the national Youth Innovation Hackathon (June 2021) for its accessibility and creative use of technology.</li>
+                            <li>Location-based login: I built a location-based authentication system in ReactJS using the HTML5 Geolocation API, with token validation that only lets users sign in from pre-approved areas. Administrators could see logins and locations in real time.</li>
+                            <li>Mentoring: I mentored six junior developers during a 3-month internship, with hands-on guidance in clean code, Agile/Scrum, Git and systematic debugging, backed by peer code reviews.</li>
+                        </ul>
+                        <figure class="slideshow wide" data-interval="7000">
+                            <img src="img/younglings-1.webp" width="1200" height="614" loading="lazy" alt="Mercedes-Benz checkout project, screen 1 of 4"
+                                data-slides="img/younglings-1.webp|Mercedes-Benz checkout project, screen 1 of 4;img/younglings-2.webp|Mercedes-Benz checkout project, screen 2 of 4;img/younglings-3.webp|Mercedes-Benz checkout project, screen 3 of 4;img/younglings-4.webp|Mercedes-Benz checkout project, screen 4 of 4;img/younglings-5.webp|iTechYe2 login page project">
+                            <figcaption><a href="https://github.com/lwandileTheGreat?tab=repositories">See these projects on GitHub</a></figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="job">
+                        <h3>Alyx Custom Software, Consultant (Remote)</h3>
+                        <p class="jobMeta">June 2021 - November 2021, contract ended</p>
+                        <p>I led the front-end development of cross-platform mobile and web applications for Indalo Bio, a laboratory working in the fight against Covid-19.</p>
+                        <ul>
+                            <li>I developed three mobile apps (Flutter and Kotlin) and one web app (ReactJS with Redux and Material UI), and turned stakeholder requirements into high-fidelity prototypes in Figma. The Kotlin app was for a barcode generating and scanning device.</li>
+                            <li>I worked with the backend and DevOps teams to connect the apps to REST and SOAP APIs built on AWS Lambda functions, and set up Firebase Authentication.</li>
+                            <li>The apps used a microservices architecture so patient data could be managed securely and the system could be deployed and maintained quickly. See <a href="https://www.alyx.co.za/">alyx.co.za</a> and <a href="https://indalo.bio/">indalo.bio</a> for more.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <h3>Cape Innovation and Technology Initiative (CiTi), Junior Software Developer</h3>
+                        <p class="jobMeta">April 2020 - April 2021, CapaCITI Tech Career Accelerator learnership, contract ended</p>
+                        <p>My first year in tech, in a learnership role.</p>
+                        <ul>
+                            <li>As team lead of 8 developers we built a native Android app (Java) and a web app (PHP) for a candidate management system that automated attendance tracking.</li>
+                            <li>With a team of 4 developers I helped refactor and maintain the BASF Quality Assurance web application in ASP.NET MVC, C# and SQL Server (Entity Framework), including Facebook and Google sign-in through REST APIs. I also helped write its documentation.</li>
+                            <li>I deployed and monitored applications on Microsoft Azure with cross-functional teams.</li>
+                        </ul>
+                        <figure class="slideshow tall" data-interval="7000">
+                            <img src="img/ams-1.webp" width="540" height="960" loading="lazy" alt="CapaCITI attendance management app, screen 1 of 5"
+                                data-slides="img/ams-1.webp|CapaCITI attendance management app, screen 1 of 5;img/ams-2.webp|CapaCITI attendance management app, screen 2 of 5;img/ams-3.webp|CapaCITI attendance management app, screen 3 of 5;img/ams-4.webp|CapaCITI attendance management app, screen 4 of 5;img/ams-5.webp|CapaCITI attendance management app, screen 5 of 5">
+                            <figcaption><a href="https://github.com/lwandileTheGreat/CapaCITI-AMS">See the attendance app on GitHub</a></figcaption>
+                        </figure>
+                    </article>
                 </div>
-            </div>
-            <img src="img/Lwandile_2.jpg" alt="Lwandile looking at the sky" class="swing aboutImg ">
 
-        </section>
+                <p class="moreProjects">For more of my projects, see my GitHub link below.</p>
+            </section>
 
-        <!--Work Experience-->
-        <section class="myWork item" data-search="html flutter kotlin reactnative expo android ios firebase programming javascript typescript react blazor knockout css angular bootstrap frontenddev backenddev csharp dotnet .net database framework library c# asp.net mvc webforms api rest restful oauth keycloak microservices azure devops docker aws lambda nodejs express postgresql project sql web mobile agile scrum company workexperience technology technologies testdrivendevelopment oop xml obejectorientedprogramming androidstudio crimesignal morae nml younglings alyx capaciti citi founder"
-            id="work">
-            <h2 class="title titleSectionExperience"> Work Experience </h2>
-            <p class="subtitleSectionExperience">Development Methods &amp; Tools <br> Agile/Scrum | Test Driven Development (TDD) | Object-Oriented Design &amp; Development | CI/CD | Microservices
-            </p>
-
-            <!--Resume Items-->
-            <div class="experience">
-
-                <p class="subtitleSectionExperience">CrimeS!gnal <br> Founder <br> September 2026 - *Current. </p>
-
-                <p class="textSectionExperience">CrimeS!gnal is a South African safety alerts and incident management app for people, communities and organisations. It is trying to help fight South Africa's high crime rate by getting citizens involved in the fight. With one tap, someone in danger can reach the people they trust and the community around them. Security companies, estates, schools and businesses can manage incidents with it too. <br><br>
-                    • Ownership: I own the company (registered in October 2026) and build the app with help from former associates from the Younglings tech programme hackathons. The idea grew from a 2020 hackathon project, and the app has been live at <a class="hackerLink" href="https://www.crimesignal.co.za">www.crimesignal.co.za</a> since 26 September 2026.<br>
-                    • Web and mobile: I designed and built the web app in TypeScript and React, and the Android and iOS app in React Native with Expo, kept light on data for people on prepaid bundles and older phones.<br>
-                    • Backend and cloud: I built the Node.js and Express backend with a PostgreSQL database on AWS, including push alerts, a loud alarm for emergencies, and queued delivery so alerts still go out under load.<br>
-                    • Data and quality: The crime map uses official SAPS crime figures that update themselves every week. Every change goes through type checks, linting, automated tests and a manual regression walk before release.
-                </p>
-
-                <p class="subtitleSectionExperience">Morae <br> Senior Associate <br> June 2026 - *Current. </p>
-
-                <p class="textSectionExperience">Software engineer with a strong focus on .NET development and API design. <br><br>
-                    • I build robust, scalable back-end solutions and well-structured RESTful APIs that drive integrations and business value.<br>
-                    • I maintain and modernise legacy .NET systems, leading migrations from monolithic applications to a microservices architecture to improve scalability, resilience and maintainability.
-                </p>
-
-                <p class="subtitleSectionExperience">NML <br> Developer <br> March 2022 - May 2026. </p>
-
-                <p class="textSectionExperience">As a full-stack developer I built and maintained web applications, modernising legacy systems and adding new, scalable solutions across the whole stack. <br><br>
-                    • Core development and modernisation: I moved legacy platforms from ASP.NET Web Forms to modern frameworks like MVC and Blazor, refactoring complex business logic so it could be tested. I contributed to the move from a monolith to microservices, which improved scalability and made deployments safer.<br>
-                    • Front end and user experience: I built dynamic, responsive interfaces using React, Knockout.js and Blazor that work well on every device.<br>
-                    • Security and API integration: I implemented OAuth 2.0 with Keycloak for authentication and role-based access control (RBAC), and built and consumed secure RESTful APIs between the front-end applications and the backend services.<br>
-                    • DevOps and collaboration: Working in Agile/Scrum teams, I helped set up CI/CD pipelines in Azure DevOps for automated builds and deployments. I kept up unit and integration tests and used Docker to keep environments consistent.<br>
-                    • Cloud and monitoring: I managed and optimised Azure resources (App Services, Storage) and used Application Insights for performance monitoring and production diagnostics.
-                </p>
-
-                <p class="subtitleSectionExperience">Younglings Africa <br> Software Developer &amp; Mentor <br> April 2021 - March 2022. </p>
-
-                <p class="textSectionExperience">Younglings Voluntary Association is a non-profit organisation that creates an environment for young people who want to become software developers and are passionate about the craft. <br><br>
-                    • E-learning app: I designed and built a cross-platform e-learning mobile app in Flutter and Dart, with AI-powered voice recognition to help early learners with reading and comprehension. It placed 3rd in the national Youth Innovation Hackathon (June 2021) for its accessibility and creative use of technology.<br>
-                    • Location-based login: I built a location-based authentication system in ReactJS using the HTML5 Geolocation API, with token validation that only lets users sign in from pre-approved areas. Administrators could see logins and locations in real time.<br>
-                    • Mentoring: I mentored six junior developers during a 3-month internship, with hands-on guidance in clean code, Agile/Scrum, Git and systematic debugging, backed by peer code reviews.
-                </p>
-                <a href="https://github.com/lwandileTheGreat?tab=repositories" class="experienceItem">
-                    <img src="img/mercedes-benz payment - google chrome 6_1_2021 8_16_37 am.png" alt="Image of my Younglings projects" id="youngSlide" class="experienceImg swing">
-                </a>
-
-                <p class="subtitleSectionExperience">Alyx Custom Software <br> Consultant (Remote) {Contract Ended} <br> June 2021 - November 2021. </p>
-
-                <p class="textSectionExperience">I led the front-end development of cross-platform mobile and web applications for Indalo Bio, a laboratory working in the fight against Covid-19. <br><br>
-                    • I developed three mobile apps (Flutter and Kotlin) and one web app (ReactJS with Redux and Material UI), and turned stakeholder requirements into high-fidelity prototypes in Figma. The Kotlin app was for a barcode generating and scanning device.<br>
-                    • I worked with the backend and DevOps teams to connect the apps to REST and SOAP APIs built on AWS Lambda functions, and set up Firebase Authentication.<br>
-                    • The apps used a microservices architecture so patient data could be managed securely and the system could be deployed and maintained quickly. See <a class="hackerLink" href="https://www.alyx.co.za/">alyx.co.za</a> and <a class="hackerLink" href="https://indalo.bio/">indalo.bio</a> for more.
-                </p>
-
-                <p class="subtitleSectionExperience">Cape Innovation and Technology Initiative (CiTi, CapaCITI Tech Career Accelerator) <br> Junior Software Developer, Learnership {Contract Ended} <br> April 2020 - April 2021. </p>
-
-                <p class="textSectionExperience">My first year in tech, in a learnership role. <br><br>
-                    • As team lead of 8 developers we built a native Android app (Java) and a web app (PHP) for a candidate management system that automated attendance tracking.<br>
-                    • With a team of 4 developers I helped refactor and maintain the BASF Quality Assurance web application in ASP.NET MVC, C# and SQL Server (Entity Framework), including Facebook and Google sign-in through REST APIs. I also helped write its documentation.<br>
-                    • I deployed and monitored applications on Microsoft Azure with cross-functional teams.
-                </p>
-                <a href="https://github.com/lwandileTheGreat/CapaCITI-AMS" class="experienceItem">
-                    <img src="img/Capaciti Ams.png" alt="Image of Capaciti Attendance Management System application" id="amsSlide" class="experienceImg swing">
-                </a>
-
-                <p class="title titleSectionExperience"> For more of my projects, click on my Github link below</p>
-            </div>
-
-        </section>
-
-        <footer class="item" id="contact" data-search="number contacts email socialmedia linkedin github">
-
-            <a href="mailto:lwandilentshobane@gmail.com" class="socialListLink">lwandilentshobane@gmail.com</a> <br>
-            <a href="tel:+27713946195" class="socialListLink">071 394 6195</a>
-            <ul class="socialList">
-                <li class="socialListItem">
-                    <a class="socialListLink" aria-label="LinkedIn" href="https://www.linkedin.com/in/lwandile-ntshobane-5214bb152/"> <i class="fa fa-linkedin" style="color: blue;"></i>
-                    </a>
-                </li>
-                <li class="socialListItem">
-                    <a class="socialListLink" aria-label="GitHub" style="color: purple;" href="https://github.com/lwandileTheGreat"> <i class="fa fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-            <p>Copyright &copy; <span id="year"></span></p>
-        </footer>
-    </div>
-
-    <script src="javascript/slideshow.js"></script>
-
-    <script type="text/javascript">
-        $('.search-item').search(function() {
-
-            //execute after done typing.
-
-        }, 3000);
-    </script>
-    <script src="javascript/particles.min.js"></script>
-    <script src="javascript/app.js"></script>
-    <script>
-        // Get a reference to the input and wire it up to an input event handler that
-        // calls the fixer function
-        document.getElementById("search").addEventListener("input", forceLower);
-
-        // Event handling functions are automatically passed a reference to the
-        // event that triggered them as the first argument (evt)
-        function forceLower(evt) {
-            // Get an array of all the words (in all lower case)
-            var words = evt.target.value.toLowerCase().split(/\s+/g);
-
-            // Loop through the array and replace the first letter with a cap
-            var newWords = words.map(function(element) {
-                // As long as we're not dealing with an empty array element, return the first letter
-                // of the word, converted to upper case and add the rest of the letters from this word.
-                // Return the final word to a new array
-                return element !== "" ? element[0].toUpperCase() + element.substr(1, element.length) : "";
-            });
-
-            // Replace the original value with the updated array of capitalized words.
-            evt.target.value = newWords.join(" ");
-        }
-    </script>
+            <footer class="item" id="contact" data-search="number contacts email socialmedia linkedin github">
+                <h2 class="visually-hidden">Contact</h2>
+                <a href="mailto:lwandilentshobane@gmail.com" class="socialListLink">lwandilentshobane@gmail.com</a><br>
+                <a href="tel:+27713946195" class="socialListLink">071 394 6195</a>
+                <ul class="socialList">
+                    <li>
+                        <a href="https://www.linkedin.com/in/lwandile-ntshobane-5214bb152/" aria-label="LinkedIn profile">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="color:#0a66c2"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/lwandileTheGreat" aria-label="GitHub profile">
+                            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+                <p>Copyright &copy; <span id="year"></span> Lwandile Ntshobane</p>
+            </footer>
+        </div>
+    </main>
 </body>
 
 </html>

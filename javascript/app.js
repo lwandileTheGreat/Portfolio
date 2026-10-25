@@ -11,6 +11,12 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
+// Started only when the menu first opens, and never for reduced motion, so
+// the hidden menu doesn't keep animating and using the battery.
+window.startParticles = function () {
+  if (window.particlesStarted || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  window.particlesStarted = true;
+
 particlesJS('particles-js',
   
   {
@@ -131,3 +137,4 @@ particlesJS('particles-js',
   }
 
 );
+};
