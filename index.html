@@ -5,85 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="description" content="Lwandile Ntshobane, full-stack developer in Cape Town. Senior Associate at Morae and founder of CrimeS!gnal.">
 
     <title>Lwandile Ntshobane's Portfolio</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="javascript/jquery-3.1.0.min.js"></script>
     <script src="javascript/e-search.min.js"></script>
-    <script src="javascript/e-search.js"></script>
 
-    <!--Add faviCon
-    -->
     <link rel="shortcut icon" href="img/itechYe2.png" type="image/x-icon">
-
 
     <!--
         This is used to render css files the correct way across browsers and have the same result
     -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdFgVK/Kvc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,800|Roboto+Slab:400,800&display=swap" rel="stylesheet">
     <script type="text/javascript">
-        var introImages = [],
-            kasiCabImages = [],
-            basfImages = [],
-            amsImages = [],
-            youngImages = [],
-            v = -1,
-            w = -1,
-            x = -1,
-            y = -1,
-            z = -1;
-
-        // Intro image slide
-        introImages[0] = "img/Lwandile2.jpg";
-        for (i = 1; i < 100; i++) {
-            introImages[i] = "img/Lwandile.png";
-        }
-
-        
-        // AMS Quality image slide
-        amsImages[0] = "img/Capaciti Ams.png";
-        amsImages[1] = "img/Capaciti Ams2.png";
-        amsImages[2] = "img/Capaciti Ams3 .png";
-        amsImages[3] = "img/Capaciti Ams4.png";
-        amsImages[4] = "img/Capaciti Ams5.png";
-        // KasiCab image slide
-        youngImages[1] = "img/Mercedes-Benz Payment - Google Chrome 6_1_2021 8_16_37 AM.png";
-        youngImages[0] = "img/Mercedes-Benz Payment - Google Chrome 6_1_2021 8_16_54 AM.png";
-        youngImages[2] = "img/Mercedes-Benz Payment - Google Chrome 6_1_2021 8_16_54 AM.png";
-        youngImages[3] = "img/Mercedes-Benz Payment - Google Chrome 6_1_2021 8_17_50 AM.png";
-        youngImages[4] = "img/Untitled - Google Chrome 6_1_2021 8_18_16 AM.png";
-        youngImages[4] = "img/iTechYe2 - Login - Google Chrome 5_23_2021 9_17_44 PM.png";
-
+        var introImages = ["img/Lwandile2.jpg", "img/Lwandile.png"],
+            amsImages = [
+                "img/Capaciti Ams.png",
+                "img/Capaciti Ams2.png",
+                "img/Capaciti Ams3 .png",
+                "img/Capaciti Ams4.png",
+                "img/Capaciti Ams5.png"
+            ],
+            youngImages = [
+                "img/mercedes-benz payment - google chrome 6_1_2021 8_16_37 am.png",
+                "img/mercedes-benz payment - google chrome 6_1_2021 8_16_54 am.png",
+                "img/mercedes-benz payment - google chrome 6_1_2021 8_17_50 am.png",
+                "img/untitled - google chrome 6_1_2021 8_18_16 am.png",
+                "img/itechye2 - login - google chrome 5_23_2021 9_17_44 pm.png"
+            ],
+            x = 0,
+            y = 0,
+            z = 0;
 
         function displayNextIntroImage() {
-            x = x === introImages.length - 1 ? 0 : x + 1;
+            x = (x + 1) % introImages.length;
             document.getElementById("slideIntroImg").src = introImages[x];
         }
 
-       
-
         function displayNextAmsImage() {
-            z = z === amsImages.length - 1 ? 0 : z + 1;
+            z = (z + 1) % amsImages.length;
             document.getElementById("amsSlide").src = amsImages[z];
         }
 
         function displayNextYoungImage() {
-            v = v === youngImages.length - 1 ? 0 : z + 1;
-            document.getElementById("youngSlide").src = youngImages[z];
+            y = (y + 1) % youngImages.length;
+            document.getElementById("youngSlide").src = youngImages[y];
         }
-
 
         function startTimer() {
             setInterval(displayNextIntroImage, 5000);
             setInterval(displayNextAmsImage, 7000);
-            setInterval(displayNextBasfImage, 7000);
-            setInterval(displayNextKasiCabImage, 7000);
             setInterval(displayNextYoungImage, 7000);
         }
     </script>
@@ -91,8 +68,6 @@
 
 <body onload="startTimer()">
     <header>
-
-
 
         <button class="nav-opener" aria-label="toggle navigation">
             <span class="hamburgerBtn"></span>
@@ -122,8 +97,6 @@
 
     </header>
 
-
-
     <!--Welcome message-->
     <h1 id="welcomeMsg"> Welcome To My Portfolio</h1>
 
@@ -136,11 +109,12 @@
             <option value="Backend dev"></option>
             <option value="Certificates"></option>
             <option value="Contacts"></option>
-               <option value="Education"></option>
+            <option value="Education"></option>
             <option value="Frontend dev"></option>
-              <option value="Work Experience"></option>
+            <option value="Azure"></option>
+            <option value="Dotnet"></option>
+            <option value="Work Experience"></option>
         </datalist>
-
 
     </div>
 
@@ -149,19 +123,15 @@
         <h1 class="title titleSectionIntro">
             <strong> Lwandile Ntshobane</strong>
         </h1>
-        <p class="subtitle subtitleSectionIntro"> Full Stack Developer</p>
-
+        <p class="subtitle subtitleSectionIntro"> Full-Stack Developer | Senior Associate at Morae | Founder of CrimeS!gnal</p>
 
         <img src="img/Lwandile2.jpg" alt="lwandile Ntshobane's image" id="slideIntroImg" class="introImg">
 
-        <!-- <img src="img/Lwandile2.jpg" alt="lwandile Ntshobane's image" class="introImg"> -->
-
-        </div>
     </section>
 
     <div class="containerItems">
         <!--The services I provide-->
-        <section class="myServices item" data-search="html css frontenddev backenddev flutter android iOS firebase programming javaScript angular bootstrap xml androidstudio c# csharp framework library asp.net sql web mobile database service technology technologies"
+        <section class="myServices item" data-search="html css frontenddev backenddev flutter kotlin reactnative expo android ios firebase programming javascript typescript react blazor knockout angular bootstrap xml androidstudio c# csharp dotnet .net framework library asp.net mvc webforms api rest restful oauth keycloak microservices azure devops docker sql web mobile database service technology technologies"
             id="services">
             <h2 class="title titleSectionServices"> Technical Expertise</h2>
             <div class="services">
@@ -169,79 +139,93 @@
                     <h3 class="subtitleServices"> Web development </h3>
                     <p class="subtitle">Technologies I can use: </p>
 
-                    <p> HTML5 / JavaScript / CSS3 (This is the part that makes the site look pretty). This includes using Bootstrap, Angular, TypeScript, GraphQl, React, Razor and jQuery to create more interactive, responsive and user-friendly web applications. </p>
+                    <p> HTML5 / JavaScript / TypeScript / CSS3 (This is the part that makes the site look pretty). This includes React, Blazor, Knockout.js, Angular, GraphQL, Bootstrap, Razor and jQuery to create interactive, responsive and user-friendly web applications. </p>
 
-                    <p> Microsoft ASP.NET Core MVC C# (This is the part where we build the part that links the database to the front end of the website). I also can use API's to implement external Authentication, Content Management Systems and more. </p>
+                    <p> Microsoft .NET and C# with ASP.NET Core, MVC and Web Forms (This is the part that links the database to the front end of the website). I design and build secure RESTful APIs, set up sign-in with OAuth 2.0 and Keycloak, and move older monolithic systems to microservices. </p>
 
-                    <p> Microsoft SQL Server using Entity Framework (This is the database that stores information for our websites). I can also use firebaseas the backend of web applications.
+                    <p> Microsoft SQL Server using Entity Framework (This is the database that stores information for our websites). I also use PostgreSQL and Firebase as the backend of web applications.
                     </p>
 
                 </div>
-                <!--Other service-->
-                <div class="services">
-                    <div class="service">
-                        <h3 class="subtitleServices"> Mobile Development </h3>
-                        <p class="subtitle">Technologies I can use: </p>
-                        <p> Java and Android Studio (This is mainly used to create Android platform specific applications). I can use XML to create amazing user interfaces. I can use mySQL relational database to create a storage for information used in an
-                            application. </p>
+            </div>
 
-                        <p> Flutter (This is used to create cross platform applications for Android, iOS, Web and desktop). Using the dart programming language to implement logic.</p>
+            <div class="services">
+                <div class="service">
+                    <h3 class="subtitleServices"> Mobile Development </h3>
+                    <p class="subtitle">Technologies I can use: </p>
+                    <p> Flutter (This is used to create cross platform applications for Android, iOS, Web and desktop). Using the Dart programming language to implement logic.</p>
 
-                        <p> I can use Firebase for the backend of Mobile applications. Creating data storage, third party authentication and more.
-                        </p>
-                    </div>
+                    <p> React Native with Expo (This is used to build one app for both Android and iOS in TypeScript).</p>
+
+                    <p> Kotlin, Java and Android Studio (This is mainly used to create Android platform specific applications). I can use XML to create user interfaces and SQL databases to store the information an application uses. </p>
+
+                    <p> I can use Firebase for the backend of mobile applications, for data storage, third party authentication and more.
+                    </p>
                 </div>
+            </div>
 
-                <!--End services-->
+            <div class="services">
+                <div class="service">
+                    <h3 class="subtitleServices"> Cloud &amp; DevOps </h3>
+                    <p class="subtitle">Technologies I can use: </p>
+                    <p> Microsoft Azure (App Services, Storage and Application Insights for monitoring) and AWS (Lambda functions and DynamoDB).</p>
+
+                    <p> CI/CD pipelines in Azure DevOps and GitHub Actions for automated builds and deployments, and Docker to keep every environment the same.</p>
+
+                    <p> Unit and integration testing, working in Agile/Scrum teams.
+                    </p>
+                </div>
+            </div>
 
         </section>
 
         <!--About-->
-        <section class="myAbout item" data-search="education school university college address certificates qualification skills interests hobbies" id="about">
+        <section class="myAbout item" data-search="education school university college address certificates qualification skills interests hobbies azure" id="about">
 
             <h2 class="title titleSectionAbout">My Background <a href="#work" class="btn">*Work Experience* </a></h2>
             <p class="subtitle subtitleSectionAbout"> Developer From Cape Town </p>
 
             <div class="aboutBody">
-                <p>I'm a previous Bachelor of Science in Biological Sciences graduate and I have a National Certificate in Information Technology (Systems Development).</p>
-                <p>I have profound interests in the following fields: Application Development, Custom Software Development, Database Development, Mobile Application Development, Web Development, iOS Development and Android Development.
+                <p>I'm a full-stack developer with over five years of experience designing, building and scaling web and mobile applications. I hold a Bachelor of Science from the University of the Witwatersrand and a National Certificate in Information Technology (Systems Development).</p>
+                <p>My core expertise is full-stack web development, custom software and database design, and cross-platform mobile development for iOS and Android. I enjoy taking a digital product from the first idea all the way to deployment.
                 </p>
-                <p>I have a humble and welcoming spirit which is accompanied by a respectful behaviour. I am easy to communicate with and I am a good communicator. I am willing to listen/read and learn new things. I am very good with meeting deadlines, I
-                    am very ambitious, goal-oriented, compassionate and I believe that with hard work there is nothing that cannot be achieved.</p>
+                <p>I work well in collaborative, cross-functional teams where clear communication and a focus on quality lead to good outcomes. I am willing to listen, read and learn new things, I am good at meeting deadlines, and I believe that curiosity and consistent effort are the foundation of lasting work.</p>
 
                 <div class="skillsContainer">
                     <div class="aboutItem">
                         <h3>Education</h3>
 
-                        <p>Hillbrow Senior Secondary School 2016(Matric)
+                        <p>Hillbrow Senior Secondary School 2016 (Matric)
                         </p>
                         <p>University of The Witwatersrand Bachelor of Science 2017-2019
                         </p>
-                        <p>SAQA ID 48872 – National Certificate: Information Technology (Systems Development) NQF Level 5 2020-2021
+                        <p>SAQA ID 48872, National Certificate: Information Technology (Systems Development) NQF Level 5 2020-2021
                         </p>
 
-                        <a id="hackerLink" href="https://www.hackerrank.com/certificates/318ab7e245bd">HackerRank Certificate for Problem Solving (Basic)</a> <br><br>
-                        <a id="hackerLink" href="https://adscerts.com/scholar/650BE36E3D8DC7AE">Google Developer Certification for Android Development</a><br><br>
+                        <p>Microsoft Certified: Azure Fundamentals</p>
 
-                        <a id="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/responsive-web-design">FreeCodeCamp Responsive Web Design Certificate</a>
+                        <a class="hackerLink" href="https://www.hackerrank.com/certificates/318ab7e245bd">HackerRank Certificate for Problem Solving (Basic)</a> <br><br>
+                        <a class="hackerLink" href="https://adscerts.com/scholar/650BE36E3D8DC7AE">Google Developer Certification for Android Development</a><br><br>
+                        <a class="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/responsive-web-design">FreeCodeCamp Responsive Web Design Certificate</a>
                         <br><br>
-                        <a id="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/javascript-algorithms-and-data-structures">FreeCodeCamp JavaScript Algorithms and Data Structures Certificate</a> <br/><br/>
-                        <a id="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/front-end-development-libraries">Front End Libraries Certificate</a>
-                        </p>
+                        <a class="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/javascript-algorithms-and-data-structures">FreeCodeCamp JavaScript Algorithms and Data Structures Certificate</a> <br><br>
+                        <a class="hackerLink" href="https://www.freecodecamp.org/certification/lwandile/front-end-development-libraries">Front End Libraries Certificate</a>
                     </div>
 
                     <div class="aboutItem">
                         <h3>Key Skills</h3>
                         <ul>
+                            <li>.NET and API Design</li>
+                            <li>Legacy Modernisation</li>
                             <li>Time Management</li>
                             <li>Detail-Oriented and Results Driven</li>
                             <li>Project Planning</li>
-                            <li>Teamwork</li>
+                            <li>Teamwork and Mentoring</li>
                             <li>Critical thinking </li>
                         </ul>
                     </div>
                     <div class="aboutItem">
-                        <h3>Interests & Hobbies</h3>
+                        <h3>Interests &amp; Hobbies</h3>
                         <ul>
                             <li>Artificial Intelligence</li>
                             <li>Charity</li>
@@ -257,68 +241,72 @@
         </section>
 
         <!--Work Experience-->
-        <section class="myWork item" data-search="html flutter android iOS firebase programming javascript css angular bootstrap frontenddev backenddev csharp database framework library c# asp.net mvc project sql web mobile agile company workexperience technology technologies testdrivendevelopment oop xml obejectorientedprogramming androidstudio"
+        <section class="myWork item" data-search="html flutter kotlin reactnative expo android ios firebase programming javascript typescript react blazor knockout css angular bootstrap frontenddev backenddev csharp dotnet .net database framework library c# asp.net mvc webforms api rest restful oauth keycloak microservices azure devops docker aws lambda nodejs express postgresql project sql web mobile agile scrum company workexperience technology technologies testdrivendevelopment oop xml obejectorientedprogramming androidstudio crimesignal morae nml younglings alyx capaciti citi founder"
             id="work">
             <h2 class="title titleSectionExperience"> Work Experience </h2>
-            <p class="subtitleSectionExperience">Development Methods & Tools <br> Agile Development Methodologies | Test Driven Development (TDD) | Object-Oriented Design & Development.
+            <p class="subtitleSectionExperience">Development Methods &amp; Tools <br> Agile/Scrum | Test Driven Development (TDD) | Object-Oriented Design &amp; Development | CI/CD | Microservices
             </p>
 
             <!--Resume Items-->
             <div class="experience">
 
-                <p class="subtitleSectionExperience">CapaCITI Tech Career Accelerator <br> Learnership <br> 09 Mar 2020 – 28 Feb 2021. </p>
+                <p class="subtitleSectionExperience">CrimeS!gnal <br> Founder <br> September 2026 - *Current. </p>
 
-                <p class="textSectionExperience">I learned the following: <br/> <br/>
-                    • Web Development and Design in HTML5, JavaScript & CSS3.<br/>
-                    • Database Design, Implementation and Development.<br/> 
-                    • Computer Programming and Problem Solving.<br/> 
-                    • Installing and configuring mobile application.<br/> 
-                    • Basic computer connection and troubleshooting.<br/> 
-                    • Review and test end user tools functionality.<br/> 
-                    • Data capturing, verification and validation.<br/> 
-                    • Data retrieval, searching and sorting.<br/> 
-                    • Application Problem solving techniques.<br/> 
-                    • Assist in User interface designing.<br/> 
-                    • Updating applications patches.<br/> 
-                    • IT research and development.<br/> 
-                    • Analyze problem situations to plan an object-oriented programming (OOP) implementation.<br/> 
-                    • Market/Sell IT products.<br/> 
-                    • Procurement of IT products online.<br/> 
-                    • Comparing Hardware and software specifications. <br/> <br/> 
+                <p class="textSectionExperience">CrimeS!gnal is a South African safety alerts and incident management app for people, communities and organisations. It is trying to help fight South Africa's high crime rate by getting citizens involved in the fight. With one tap, someone in danger can reach the people they trust and the community around them. Security companies, estates, schools and businesses can manage incidents with it too. <br><br>
+                    • Ownership: I own the company (registered in October 2026) and build the app with help from former associates from the Younglings tech programme hackathons. The idea grew from a 2020 hackathon project, and the app has been live at <a class="hackerLink" href="https://www.crimesignal.co.za">www.crimesignal.co.za</a> since 26 September 2026.<br>
+                    • Web and mobile: I designed and built the web app in TypeScript and React, and the Android and iOS app in React Native with Expo, kept light on data for people on prepaid bundles and older phones.<br>
+                    • Backend and cloud: I built the Node.js and Express backend with a PostgreSQL database on AWS, including push alerts, a loud alarm for emergencies, and queued delivery so alerts still go out under load.<br>
+                    • Data and quality: The crime map uses official SAPS crime figures that update themselves every week. Every change goes through type checks, linting, automated tests and a manual regression walk before release.
+                </p>
 
-                    
-As a team lead of 8 developers we managed to create two applications (Android app and web app). The application/s were a candidate management system that would help in taking candidates attendance. The android app was built using Java on Android studio. It involved the usage of 3rd party APIs and we used the Agile methology. We also made a web app to work along with the android application with it's backend built on php. With a team of 4 developers we managed to refactor and maintain the BASF quality web application using ASP.NET MVC. I was involved in creating external 3rd party authentication (Facebook and google) using Rest API's. I got a chance to work with Microsoft SQL Server(using entity framework) as a database and used C# in the controllers connecting the frontend to the database. In building the frontend, I got a chance to use jQuery, Bootstrap, Razor, CSS3, HTML5 and JavaScript. This web app was built to assist BASF employees in managing the high loads of customer related data. I participated in writing a documentation for the application, which also helped in improving my technical writing skills. For deployment of the application we used Azure
+                <p class="subtitleSectionExperience">Morae <br> Senior Associate <br> June 2026 - *Current. </p>
+
+                <p class="textSectionExperience">Software engineer with a strong focus on .NET development and API design. <br><br>
+                    • I build robust, scalable back-end solutions and well-structured RESTful APIs that drive integrations and business value.<br>
+                    • I maintain and modernise legacy .NET systems, leading migrations from monolithic applications to a microservices architecture to improve scalability, resilience and maintainability.
+                </p>
+
+                <p class="subtitleSectionExperience">NML <br> Developer <br> March 2022 - May 2026. </p>
+
+                <p class="textSectionExperience">As a full-stack developer I built and maintained web applications, modernising legacy systems and adding new, scalable solutions across the whole stack. <br><br>
+                    • Core development and modernisation: I moved legacy platforms from ASP.NET Web Forms to modern frameworks like MVC and Blazor, refactoring complex business logic so it could be tested. I contributed to the move from a monolith to microservices, which improved scalability and made deployments safer.<br>
+                    • Front end and user experience: I built dynamic, responsive interfaces using React, Knockout.js and Blazor that work well on every device.<br>
+                    • Security and API integration: I implemented OAuth 2.0 with Keycloak for authentication and role-based access control (RBAC), and built and consumed secure RESTful APIs between the front-end applications and the backend services.<br>
+                    • DevOps and collaboration: Working in Agile/Scrum teams, I helped set up CI/CD pipelines in Azure DevOps for automated builds and deployments. I kept up unit and integration tests and used Docker to keep environments consistent.<br>
+                    • Cloud and monitoring: I managed and optimised Azure resources (App Services, Storage) and used Application Insights for performance monitoring and production diagnostics.
+                </p>
+
+                <p class="subtitleSectionExperience">Younglings Africa <br> Software Developer &amp; Mentor <br> April 2021 - March 2022. </p>
+
+                <p class="textSectionExperience">Younglings Voluntary Association is a non-profit organisation that creates an environment for young people who want to become software developers and are passionate about the craft. <br><br>
+                    • E-learning app: I designed and built a cross-platform e-learning mobile app in Flutter and Dart, with AI-powered voice recognition to help early learners with reading and comprehension. It placed 3rd in the national Youth Innovation Hackathon (June 2021) for its accessibility and creative use of technology.<br>
+                    • Location-based login: I built a location-based authentication system in ReactJS using the HTML5 Geolocation API, with token validation that only lets users sign in from pre-approved areas. Administrators could see logins and locations in real time.<br>
+                    • Mentoring: I mentored six junior developers during a 3-month internship, with hands-on guidance in clean code, Agile/Scrum, Git and systematic debugging, backed by peer code reviews.
+                </p>
+                <a href="https://github.com/lwandileTheGreat?tab=repositories" class="experienceItem">
+                    <img src="img/mercedes-benz payment - google chrome 6_1_2021 8_16_37 am.png" alt="Image of my Younglings projects" id="youngSlide" class="experienceImg swing">
+                </a>
+
+                <p class="subtitleSectionExperience">Alyx Custom Software <br> Consultant (Remote) {Contract Ended} <br> June 2021 - November 2021. </p>
+
+                <p class="textSectionExperience">I led the front-end development of cross-platform mobile and web applications for Indalo Bio, a laboratory working in the fight against Covid-19. <br><br>
+                    • I developed three mobile apps (Flutter and Kotlin) and one web app (ReactJS with Redux and Material UI), and turned stakeholder requirements into high-fidelity prototypes in Figma. The Kotlin app was for a barcode generating and scanning device.<br>
+                    • I worked with the backend and DevOps teams to connect the apps to REST and SOAP APIs built on AWS Lambda functions, and set up Firebase Authentication.<br>
+                    • The apps used a microservices architecture so patient data could be managed securely and the system could be deployed and maintained quickly. See <a class="hackerLink" href="https://www.alyx.co.za/">alyx.co.za</a> and <a class="hackerLink" href="https://indalo.bio/">indalo.bio</a> for more.
+                </p>
+
+                <p class="subtitleSectionExperience">Cape Innovation and Technology Initiative (CiTi, CapaCITI Tech Career Accelerator) <br> Junior Software Developer, Learnership {Contract Ended} <br> April 2020 - April 2021. </p>
+
+                <p class="textSectionExperience">My first year in tech, in a learnership role. <br><br>
+                    • As team lead of 8 developers we built a native Android app (Java) and a web app (PHP) for a candidate management system that automated attendance tracking.<br>
+                    • With a team of 4 developers I helped refactor and maintain the BASF Quality Assurance web application in ASP.NET MVC, C# and SQL Server (Entity Framework), including Facebook and Google sign-in through REST APIs. I also helped write its documentation.<br>
+                    • I deployed and monitored applications on Microsoft Azure with cross-functional teams.
                 </p>
                 <a href="https://github.com/lwandileTheGreat/CapaCITI-AMS" class="experienceItem">
                     <img src="img/Capaciti Ams.png" alt="Image of Capaciti Attendance Management System application" id="amsSlide" class="experienceImg swing">
-
                 </a>
 
-                <p class="subtitleSectionExperience">Younglings Africa(hosted by CapaCITI) <br>Extended Internship <br> 01 April 2021 – *Current. </p>
-
-                <p class="textSectionExperience">Younglings Voluntary Association is a Non-Profit Organisation dedicated to creating an environment for young people who aspire to becoming Software Developers and are passionate about the craft; in fact, they are obsessed with it! <br/><br/>
-
-                    2021 Post lockdown Hackathon(June 2021) 3rd prize winner(Younglings Africa) for building a flutter mobile e-learning application in 2 weeks. The application involved the usage of AI, making a voice recognition application that can take commands from the end users to help them learn and use the app better (using Alan studio), I also got a chance to build a many-to-many chat application using cloud firestore to create a chat room/s for users to share study content.This application also had awesome features like ocr to help in the conversion of written text to digital text. Users were able to share all types of media files (images, videos, music, docx, csv etc.
-                    
-                    <br/><br/> I got a chance to build a location based login system in reactjs. This web app allowed users who are registered on the app to only be able to login from specific latitude and longitude coordinates. This web required the usage of trigonometry and a lot of mathematical concepts. I got to work with balsamiq in making the wireframes, Adobe XD for the design and reactjs for the development. I also got a chance to migrate an old Angularjs project to Angular. This involved the configuration of Webpack and NPM from Gulp/Grunt and bower components. This was to make sure that the web app is well maintained. <br/><br/>
-                    
-                    I also got a chance to mentor a group of 6 developers, who really helped me improve my leadership skills.
-                </p>
-                <br>
-                <a href="https://www.basf.com/za/en/who-we-are/Companies-and-Locations/BASF-SA.html" class="experienceItem">
-                    <img src="img/Mercedes-Benz Payment - Google Chrome 6_1_2021 8_16_37 AM.png" alt="Image of my younglings projects" id="youngSlide" class="experienceImg swing">
-
-                </a>
-
-                <p class="subtitleSectionExperience">Consultant  (Remote) {Contract Ended} <br/> Alyx Custom Software <br/> June 2021 - October 2021
-
-
-                    <p class="textSectionExperience">Building 3 mobile apps using flutter(2) and kotlin(1), and building 1 reactjs web app for indalo bio. I'm the lead in the front end of all these applications. I got a chance to work with Rest and SOAP Api's created using AWS lambda functions (dynamoDb). For the flutter application's we used firebase to create a backend as a service for the authentication. In the react web app I had a chance to work with redux, react routing, material UI. All of these apps designs were done using figma. The kotlin application was for a barcode generating and scanner device, which also had the integration of APIs from companies in partnership with the laboratory. <br/> <br/>  
-                        All of these were built using the microservice architecture approach. Trello &slack was the colaborative the environment we used
-
-                        All of these applications are to assist the laboratory in managing all the patient details and help in the fight against Covid-19. https://www.alyx.co.za/ and https://indalo.bio/ for more information. </p>
-            
-                    <p class="title titleSectionExperience"> For more of my amazing project/s, click on my Github link below</p>
+                <p class="title titleSectionExperience"> For more of my projects, click on my Github link below</p>
             </div>
 
         </section>
@@ -326,60 +314,55 @@ As a team lead of 8 developers we managed to create two applications (Android ap
         <footer class="item" id="contact" data-search="number contacts email socialmedia linkedin github">
 
             <a href="mailto:lwandilentshobane@gmail.com" class="socialListLink">lwandilentshobane@gmail.com</a> <br>
-            <a href="tel:0795469176" class="socialListLink"> 
-        079 546 9176</a>
+            <a href="tel:+27713946195" class="socialListLink">071 394 6195</a>
             <ul class="socialList">
                 <li class="socialListItem">
-                    <a class="socialListLink" href="https://www.linkedin.com/in/lwandile-ntshobane-5214bb152/"> <i class="fa fa-linkedin" style="color: blue;"></i>
-
+                    <a class="socialListLink" aria-label="LinkedIn" href="https://www.linkedin.com/in/lwandile-ntshobane-5214bb152/"> <i class="fa fa-linkedin" style="color: blue;"></i>
                     </a>
                 </li>
                 <li class="socialListItem">
-                    <a class="socialListLink" style="color: purple;" href="https://github.com/lwandileTheGreat "> <i class="fa fa-github"></i>
+                    <a class="socialListLink" aria-label="GitHub" style="color: purple;" href="https://github.com/lwandileTheGreat"> <i class="fa fa-github"></i>
                     </a>
                 </li>
             </ul>
             <p>Copyright &copy; <span id="year"></span></p>
         </footer>
-        </div>
+    </div>
 
+    <script src="javascript/slideshow.js"></script>
 
+    <script type="text/javascript">
+        $('.search-item').search(function() {
 
-        <script src="javascript/slideshow.js"></script>
+            //execute after done typing.
 
-        <script type="text/javascript">
-            $('.search-item').search(function() {
+        }, 3000);
+    </script>
+    <script src="javascript/particles.min.js"></script>
+    <script src="javascript/app.js"></script>
+    <script>
+        // Get a reference to the input and wire it up to an input event handler that
+        // calls the fixer function
+        document.getElementById("search").addEventListener("input", forceLower);
 
-                //execute after done typing.
+        // Event handling functions are automatically passed a reference to the
+        // event that triggered them as the first argument (evt)
+        function forceLower(evt) {
+            // Get an array of all the words (in all lower case)
+            var words = evt.target.value.toLowerCase().split(/\s+/g);
 
-            }, 3000);
-        </script>
-        <script src="javascript/particles.js"></script>
-        <script src="javascript/particles.min.js"></script>
-        <script src="javascript/app.js"></script>
-        <script>
-            // Get a reference to the input and wire it up to an input event handler that
-            // calls the fixer function
-            document.getElementById("search").addEventListener("input", forceLower);
+            // Loop through the array and replace the first letter with a cap
+            var newWords = words.map(function(element) {
+                // As long as we're not dealing with an empty array element, return the first letter
+                // of the word, converted to upper case and add the rest of the letters from this word.
+                // Return the final word to a new array
+                return element !== "" ? element[0].toUpperCase() + element.substr(1, element.length) : "";
+            });
 
-            // Event handling functions are automatically passed a reference to the
-            // event that triggered them as the first argument (evt)
-            function forceLower(evt) {
-                // Get an array of all the words (in all lower case)
-                var words = evt.target.value.toLowerCase().split(/\s+/g);
-
-                // Loop through the array and replace the first letter with a cap
-                var newWords = words.map(function(element) {
-                    // As long as we're not dealing with an empty array element, return the first letter
-                    // of the word, converted to upper case and add the rest of the letters from this word.
-                    // Return the final word to a new array
-                    return element !== "" ? element[0].toUpperCase() + element.substr(1, element.length) : "";
-                });
-
-                // Replace the original value with the updated array of capitalized words.
-                evt.target.value = newWords.join(" ");
-            }
-        </script>
+            // Replace the original value with the updated array of capitalized words.
+            evt.target.value = newWords.join(" ");
+        }
+    </script>
 </body>
 
 </html>
